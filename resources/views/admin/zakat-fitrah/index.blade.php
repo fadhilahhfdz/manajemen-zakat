@@ -30,6 +30,7 @@
 
                                 <div class="card-tools">
                                     <div class="card-header-form">
+                                        <a href="/admin/zakat-fitrah/print" class="btn btn-sm btn-danger"><i class="fas fa-print"></i> Print</a>
                                         <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
                                             data-target="#tambah-zakat-fitrah">
                                             <i class="fas fa-plus"></i> Tambah

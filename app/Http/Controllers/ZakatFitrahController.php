@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\ZakatFitrah;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ZakatFitrahController extends Controller
@@ -96,5 +98,16 @@ class ZakatFitrahController extends Controller
         $zakatFitrah->delete();
 
         return redirect('/admin/zakat-fitrah')->with('sukses', 'Data berhasil dihapus');
+    }
+
+    public function print() {
+        $totalZakatLiter = ZakatFitrah::sum('zakat');
+        $zakatFitrah = ZakatFitrah::all();
+        $date = Carbon::now();
+        $tahunSekarang = $date->format('Y');
+        $totalJiwa = ZakatFitrah::sum('jumlah_jiwa');
+
+        $pdf = Pdf::loadView('admin.zakat-fitrah.print', compact('totalZakatLiter', 'zakatFitrah', 'tahunSekarang', 'totalJiwa'));
+        return $pdf->stream();
     }
 }

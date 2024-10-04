@@ -38,10 +38,10 @@
                     </div>
                     <div class="col-md-3 col-sm-6 col-12">
                         <div class="info-box">
-                            <span class="info-box-icon bg-secondary"><i class="fas fa-info-circle"></i></span>
+                            <span class="info-box-icon bg-secondary"><i class="">ℓ</i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text">Total Zakat(liter)</span>
-                                <span class="info-box-number">{{ $totalZakatPerLiter }} ℓ</span>
+                                <span class="info-box-number">{{ $totalZakatPerLiter }} liter</span>
                             </div>
                         </div>
                     </div>

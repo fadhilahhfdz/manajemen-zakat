@@ -38,4 +38,5 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/admin/zakat-fitrah/edit/{id}', [ZakatFitrahController::class, 'edit']);
     Route::put('/admin/zakat-fitrah/edit/{id}', [ZakatFitrahController::class, 'update']);
     Route::get('/admin/zakat-fitrah/delete/{id}', [ZakatFitrahController::class, 'destroy']);
+    Route::get('/admin/zakat-fitrah/print', [ZakatFitrahController::class, 'print']);
 });
