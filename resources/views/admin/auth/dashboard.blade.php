@@ -29,10 +29,28 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-6 col-12">
                         <div class="info-box">
-                            <span class="info-box-icon bg-secondary"><i class="far fa-newspaper"></i></span>
+                            <span class="info-box-icon bg-secondary"><i class="fas fa-users"></i></span>
                             <div class="info-box-content">
-                                <span class="info-box-text">Lorem</span>
-                                <span class="info-box-number">0</span>
+                                <span class="info-box-text">Total Jiwa</span>
+                                <span class="info-box-number">{{ $totalJiwa }} Jiwa</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-secondary"><i class="fas fa-info-circle"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Total Zakat(liter)</span>
+                                <span class="info-box-number">{{ $totalZakatPerLiter }} ℓ</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-secondary"><i class="fas fa-weight"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Total Zakat(Kg)</span>
+                                <span class="info-box-number">{{ ($totalZakatPerKg / $totalJiwa - 1) * $totalJiwa }} Kg</span>
                             </div>
                         </div>
                     </div>

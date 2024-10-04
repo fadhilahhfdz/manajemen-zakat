@@ -30,9 +30,7 @@ Route::get('/login', function() {
 
 // Admin
 Route::group(['middleware' => ['auth']], function() {
-    Route::get('/admin/dashboard', function() {
-        return view('admin.auth.dashboard');
-    });
+    Route::get('/admin/dashboard', [AuthController::class, 'dashboard']);
 
     // Zakat Fitrah
     Route::get('/admin/zakat-fitrah', [ZakatFitrahController::class, 'index']);

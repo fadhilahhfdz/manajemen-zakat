@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\ZakatFitrah;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -53,15 +54,11 @@ class AuthController extends Controller
         return redirect('/login');
     }
 
-    // public function dashboard() {
-    //     $berita = Berita::all();
-    //     $user = User::all();
-    //     $penduduk = Penduduk::all();
-    //     $totalLakiLaki = Penduduk::sum('laki_laki');
-    //     $totalPerempuan = Penduduk::sum('perempuan');
-    //     $totalJiwa = $totalLakiLaki + $totalPerempuan;
-    //     $informasiDesa = InformasiDesa::all();
-        
-    //     return view('admin.auth.dashboard', compact('berita', 'user', 'penduduk', 'totalLakiLaki', 'totalPerempuan', 'informasiDesa', 'totalJiwa'));
-    // }
+    public function dashboard() {
+        $totalJiwa = ZakatFitrah::sum('jumlah_jiwa');
+        $totalZakatPerLiter = ZakatFitrah::sum('zakat');
+        $totalZakatPerKg = ZakatFitrah::sum('zakat');
+
+        return view('admin.auth.dashboard', compact('totalJiwa', 'totalZakatPerLiter', 'totalZakatPerKg'));
+    }
 }
