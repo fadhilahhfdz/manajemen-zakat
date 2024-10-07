@@ -108,6 +108,22 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="/admin/zakat-fidyah" class="nav-link">
+                                <i class="nav-icon fas fa-minus"></i>
+                                <p>
+                                    Zakat Fidyah
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/penerima-zakat" class="nav-link">
+                                <i class="nav-icon fas fa-list-ul"></i>
+                                <p>
+                                    Daftar Penerima Zakat
+                                </p>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

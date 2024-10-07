@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PenerimaZakatController;
 use App\Http\Controllers\ZakatFitrahController;
 use Illuminate\Support\Facades\Route;
 
@@ -39,4 +40,12 @@ Route::group(['middleware' => ['auth']], function() {
     Route::put('/admin/zakat-fitrah/edit/{id}', [ZakatFitrahController::class, 'update']);
     Route::get('/admin/zakat-fitrah/delete/{id}', [ZakatFitrahController::class, 'destroy']);
     Route::get('/admin/zakat-fitrah/print', [ZakatFitrahController::class, 'print']);
+    
+    // Penerima Zakat
+    Route::get('/admin/penerima-zakat', [PenerimaZakatController::class, 'index']);
+    Route::post('/admin/penerima-zakat/create', [PenerimaZakatController::class, 'store']);
+    Route::get('/admin/penerima-zakat/edit/{id}', [PenerimaZakatController::class, 'edit']);
+    Route::put('/admin/penerima-zakat/edit/{id}', [PenerimaZakatController::class, 'update']);
+    Route::get('/admin/penerima-zakat/delete/{id}', [PenerimaZakatController::class, 'destroy']);
+    Route::get('/admin/penerima-zakat/print', [PenerimaZakatController::class, 'print']);
 });
